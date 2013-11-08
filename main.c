@@ -669,6 +669,7 @@ int main()
                    speedlevel = 4;
                 else
                    speedlevel = 4+0x3f-rcvbuf[4];
+					spcount = speedlevel;
                 stop_flag = 0;
 			  }
               break;
@@ -682,6 +683,7 @@ int main()
                    speedlevel = 4;
                 else
                    speedlevel = 4+0x3f-rcvbuf[4];
+					spcount = speedlevel;
                 stop_flag = 0;
 			  }
               break;
@@ -694,6 +696,7 @@ int main()
                    up_speed = 16;
                 else
                    up_speed = 16+0x3f-rcvbuf[5];
+					up_spcount = up_speed;
                 up_flag = 0;
                 if(P3_2 == 0)
                    delay(3000);
@@ -708,6 +711,7 @@ int main()
                    up_speed = 16;
                 else
                    up_speed = 16+0x3f-rcvbuf[5];
+					up_spcount = up_speed;
                 up_flag = 0;
               }
               break;
