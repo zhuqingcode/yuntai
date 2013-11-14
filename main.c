@@ -665,10 +665,10 @@ int main()
                 stop_flag = 1;
                 delay(1000);
                 turn = 0;
-                if(rcvbuf[4]>=0x3f)
+                if(rcvbuf[4]>0x3f)
                    speedlevel = 4;
                 else
-                   speedlevel = 4+0x3f-rcvbuf[4];
+                   speedlevel = 4+(0x3f - rcvbuf[4])/8;
                 stop_flag = 0;
 			  }
               break;
@@ -678,10 +678,10 @@ int main()
                 stop_flag = 1;
                 delay(1000);
                 turn = 1;
-                if(rcvbuf[4]>=0x3f)
+                if(rcvbuf[4]>0x3f)
                    speedlevel = 4;
                 else
-                   speedlevel = 4+0x3f-rcvbuf[4];
+                   speedlevel = 4+(0x3f - rcvbuf[4])/8;
                 stop_flag = 0;
 			  }
               break;
@@ -690,10 +690,10 @@ int main()
               {
                 up_flag = 1;
                 up_turn = 1;
-                if(rcvbuf[5]>=0x3f)
+                if(rcvbuf[5]>0x3f)
                    up_speed = 16;
                 else
-                   up_speed = 16+0x3f-rcvbuf[5];
+                   up_speed = 32+(0x3f - rcvbuf[5])/8;
                 up_flag = 0;
                 if(P3_2 == 0)
                    delay(3000);
@@ -704,10 +704,10 @@ int main()
               {
                 up_flag = 1;
                 up_turn = 0;
-                if(rcvbuf[5]>=0x3f)
+                if(rcvbuf[5]>0x3f)
                    up_speed = 16;
                 else
-                   up_speed = 16+0x3f-rcvbuf[5];
+                   up_speed = 32+(0x3f - rcvbuf[5])/8;
                 up_flag = 0;
               }
               break;
